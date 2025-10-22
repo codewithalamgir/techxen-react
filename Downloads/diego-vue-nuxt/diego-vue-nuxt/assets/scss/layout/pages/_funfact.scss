@@ -1,0 +1,105 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.6 funfact css
+/*----------------------------------------*/
+
+.ab-funfact{
+
+    &__bg{
+        height: 100%;
+        width: calc(100% - 200px);
+        top: 0;
+        left: 100px;
+        position: absolute;
+        border-radius: 20px;
+        @media #{$lg,$md,$xs}{
+            width: calc(100%);
+            left: 0;
+        }
+        &-item{
+            position: absolute;
+            top: -35%;
+            left: 0;
+            width: 100%;
+            height: calc(160% + 30% );
+            @include background();
+            border-radius: 20px;
+        }
+        
+    }
+    
+    &__number{
+        margin-bottom: 25px;
+        & span{
+            height: 110px;
+            width: 110px;
+            font-weight: 500;
+            font-size: 64px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-didoneright);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            box-shadow: 0px 20px 50px rgba(3, 3, 20, 0.4);
+            backdrop-filter: blur(5.5px);
+            border-radius: 20px;
+            display: inline-block;
+            text-align: center;
+            line-height: 110px;
+        }
+    }
+    &__title-sm{
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 1.2;  
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-didoneright);
+        margin-bottom: 0;
+        @media #{$lg}{
+            font-size: 35px;
+        }
+        @media #{$md}{
+            font-size: 30px;
+        }
+        @media #{$xs}{
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+    &__item{
+        position: relative;
+        &.space-left{
+            &-1{
+                padding-left: 100px;
+                @media #{$lg}{
+                    padding-left: 0;
+                }
+                @media #{$md,$xs}{
+                    padding-left: 0;
+                }
+            }
+            &-2{
+                padding-left: 70px;
+                @media #{$md,$xs}{
+                    padding-left: 0;
+                }
+            }
+            &-3{
+                padding-left: 100px;
+                @media #{$md,$xs}{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    &__plr{
+        padding-left: 85px;
+        padding-right: 85px;
+        @media #{$lg,$md,$xs}{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

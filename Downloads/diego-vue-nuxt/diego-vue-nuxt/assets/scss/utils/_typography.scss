@@ -1,0 +1,75 @@
+
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@400;500;700&family=EB+Garamond:wght@400;500;600;700;800&family=Kufam:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;900&display=swap';
+
+@font-face {
+    font-family: 'Didone';
+    src:    url('../fonts/didone-light.otf') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Didone';
+    src:    url('../fonts/didone-medium.otf') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Didone Wide Medum';
+    src:    url('../fonts/didone-wide-medium.otf') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Didone Compack Dark';
+    src:    url('../fonts/didone-compack-dark.otf') format('woff');
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Didone right';
+    src:    url('../fonts/PP-Right-Didone-Medium.otf') format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Didone right';
+    src:    url('../fonts/PP-Right-Didone-Light.otf') format('woff');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300;
+}
+
+// font family
+$font-family: (
+    'ff': (
+        'body': "'DM Sans', sans-serif",
+        'heading': "'Didone', sans-serif",
+        'p': "'DM Sans', sans-serif",
+        'dmsans': "'DM Sans', sans-serif",
+        'didone': "'Didone', sans-serif",
+        'didoneWideMedium': "'Didone Wide Medum', serif",
+        'didoneCompackDark': "'Didone Compack Dark', serif",
+        'didoneright': "'Didone right', serif",
+        'garamond': "'EB Garamond', serif",
+        'kufam': "'Kufam', sans-serif",
+        'abril': "'Abril Fatface', cursive",
+        'poppins': "'Poppins', sans-serif",
+        'playfair': "'Playfair Display', sans-serif",
+        'fontawesome': '"Font Awesome 6 Pro"',
+    )
+);
+
+// font size
+$font-size: (
+    'fz': (
+        'body': 14px,
+        'p': 16px,
+    )
+);
+
+

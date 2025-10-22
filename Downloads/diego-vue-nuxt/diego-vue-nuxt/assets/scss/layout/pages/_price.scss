@@ -1,0 +1,124 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.10 price css
+/*----------------------------------------*/
+
+
+.tp-price{
+    &-item{
+        position: relative;
+        &::after{
+            position: absolute;
+            top: 0;
+            right: -12px;
+            width: 1px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.12);
+            mix-blend-mode: luminosity;
+            content: '';
+        }
+    }
+    &-head-title{
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 20px;
+        letter-spacing: -0.02em; 
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-dmsans);
+
+    }
+    &-head{
+        margin-bottom: 120px;
+        & span{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 10px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+    &-body {
+        & span{
+            font-weight: 500;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 18px;
+            display: inline-block;
+            &.tp-price-text{
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 24px;
+                letter-spacing: -0.02em;
+                color: rgba(255, 255, 255, 0.8); 
+                font-family: var(--tp-ff-dmsans);
+                margin-bottom: 30px;
+                padding-top: 26px;
+            }
+        }
+    }
+    &-body-title{
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 26px;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-garamond);
+    }
+    &-radius-border{
+        height: 24px;
+        line-height: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 100px;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: var(--tp-ff-dmsans);
+        padding: 0px 17px;
+    }
+    &-btn{
+        &-box{
+            & .tp-btn-price,
+            & .tp-btn-price-border{
+                & div{
+                    line-height: 1;
+                    display: inline-block;
+                    overflow: hidden;
+                    @include transform(translateY(1px));
+                    & span{
+                        display: block;
+                        @include transition(transform, .2s);
+                        text-shadow: 0 16px 0 var(--tp-common-black);
+                    }
+                }
+
+                &:hover{
+                    & div{
+                        & span{
+                           @include transform(translateY(-100%));
+                        }
+                    }
+                }
+            }
+            & .tp-btn-price-border{
+                & div{
+                    & span{
+                        text-shadow: 0 16px 0 var(--tp-green-2);
+                    }
+                }
+            }
+        }
+    }
+}
+.tp-price-inner{
+    & .row{
+        [class*="col-"]{
+            &:last-child{
+                & .tp-price-item{
+                    &::after{
+                        display: none;
+                    }
+                }
+            }       
+        }
+    }
+}

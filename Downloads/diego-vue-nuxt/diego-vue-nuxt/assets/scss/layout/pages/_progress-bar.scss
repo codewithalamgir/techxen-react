@@ -1,0 +1,53 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.11 progress-bar css
+/*----------------------------------------*/
+
+.tp-progress-bar{
+    &-item{
+        padding: 25px 0px;
+        overflow: hidden;
+        padding-bottom: 5px;
+        & label{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1;
+            color: var(--tp-common-white);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+    }
+    & .progress{
+        overflow: visible;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.10);
+        height: 1px;
+    }
+    & .progress-bar{
+        background-color: var(--tp-common-white);
+        border-radius: 30px;
+        position: relative;
+        overflow: visible;
+        height: 3px;
+        border-radius: 10px;
+        top: -1px;
+    }
+    & .progress-bar span {
+        position: absolute;
+        right: 0;
+        top: -15px;
+        transform: translateY(-50%);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1;
+        color: var(--tp-common-white);
+        box-shadow: 0 2px 2px rgba(1, 15, 28, 0.12);
+    }
+}
+
+.ab-personal-info__skill{
+    & .ab-personal-info__right-title{
+        margin-bottom: 5px;
+    }
+}

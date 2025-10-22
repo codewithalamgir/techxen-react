@@ -1,0 +1,246 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 Award css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-award{
+    $self : &;
+    &-bottom-border{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background-color: white;
+        @media #{$lg,$md,$xs}{
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+    &-item{
+        position: relative;
+        @extend %transition;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        & .tp-award-inner-border{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            border: 1px solid rgba($color: $white, $alpha: .08);
+            transition: .3s;
+        }
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 0;
+            background-color: #BCE70C;
+            height: 1px;
+            @extend %transition;
+            z-index: -1;
+            opacity: 0;
+        }
+        &:hover{
+            padding-left: 36px;
+            z-index: 1;
+            &::after{
+                opacity: 1;
+                width: 100%;
+            }
+            #{$self}{
+                &-arrow{
+                    visibility: visible;
+                    opacity: 1;
+                }
+                &-btn{
+                    & span{
+                        & svg{
+                            &:first-child{
+                                @include transform(translate(16px, -16px));
+                            }
+                            &:last-child{
+                                opacity: 1;
+                                visibility: visible;
+                                @include transform(translate(13px, -13px));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-wrapper{
+            @media #{$lg,$md,$xs}{
+                padding-left: 0;
+            }
+        }
+
+        &.tp-hover-reveal-item{
+            & .tp-hover-reveal-bg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 210px;
+                height: 295px;
+                opacity: 0;
+                margin: -150px 0 0 -150px;
+                overflow: hidden;
+                pointer-events: none;
+                @include background();
+                @include transition-mul((opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1)));
+                border-radius: 10px;
+            }
+        }
+
+        &:hover{
+            & .tp-hover-reveal-bg{
+                opacity: 1;
+            }
+        }
+        
+    }
+    &-title{
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--tp-common-white);
+        margin-bottom: 0;
+        @extend %ff-dmsans;
+        @media #{$xs}{
+            font-size: 20px;
+        }
+    }
+    &-content{
+        & p{
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba($color: $white, $alpha: .6);
+        }
+    }
+    &-btn{
+        display: inline-block;
+        background-color: var(--tp-common-white);
+        @include rounded-btn(44px, 44px, 44px);
+        text-align: center;
+        color: #0A1603;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        & span{
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            position: relative;
+            & svg{
+                @extend %transition;
+                @extend %svg-2;
+                @include transform(translateY(-2px));
+                position: absolute;
+                bottom: -1px;
+                left: 1px;
+                @include transition(all, 0.2s);
+                &:last-child{
+                    left: -12px;
+                    bottom: -12px;
+                    @include transform(translate(0, 0));
+                    opacity: 0;
+                }
+            }
+        }
+
+        &:hover{
+            background-color: #BCE70C;
+            color: #0A1603;
+        }
+    }
+    &-arrow{
+        position: absolute;
+        top: 35px;
+        left: 0;
+        @include transform(translateY(-50%));
+        color: var(--tp-common-white);
+        visibility: hidden;
+        opacity: 0;
+        @extend %transition;
+        & svg{
+            @extend %svg-2;
+        }
+
+    }
+    &-text{
+        &-wrapper{
+            @include transform(translateY(40px));
+        }
+        &-outline{
+            @extend %ff-abril;
+            font-weight: 400;
+            font-size: 140px;
+            line-height: 1.14;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            -webkit-text-stroke-color: rgba($color: $white, $alpha: .08);
+            -webkit-text-stroke-width: 1px;
+            -moz-text-stroke-color:  rgba($color: $white, $alpha: .08);
+            -moz-text-stroke-width: 1px;
+            -moz-text-fill-color: transparent;
+            display: inline-block;
+            @include transform(rotate(-45deg));
+        }
+        &-fill{
+            @extend %ff-abril;
+            font-weight: 400;
+            font-size: 180px;
+            line-height: .89;
+            color: #263D1A;
+            mix-blend-mode: luminosity;
+            @include transform(rotate(-45deg) translate(-50px, -37px));
+        }
+    }
+    &-shape{
+        &-1{
+            position: absolute;
+            top: -280px;
+            left: 0;
+            z-index: -1;
+        }
+    }
+}
+.tp-award{
+    &-customize{
+        & .tp-award-text-fill {
+            color: white;
+            font-size: 160px;
+        }
+        & .tp-section-title{
+            font-family: var(--tp-ff-didoneright);
+            font-weight: 500;
+            font-size: 70px;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            @media #{$xs}{
+                font-size: 45px;
+            }
+        }
+        & .tp-award-text-outline {
+            font-size: 130px;
+        }
+        & .tp-award-title{
+            font-weight: 500;
+            font-size: 30px;
+            line-height: 1;
+            font-family: var(--tp-ff-didoneright);
+        }
+        & .tp-award-inner{
+            border-bottom: 0;
+        }
+        & .tp-award-item::after {
+            background-color: var(--tp-common-white);
+        }
+    }
+}

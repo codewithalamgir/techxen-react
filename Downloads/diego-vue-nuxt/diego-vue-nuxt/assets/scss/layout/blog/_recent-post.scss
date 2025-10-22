@@ -1,0 +1,78 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  5.2 Recent Post css
+/*----------------------------------------*/
+
+.rc{
+    &__post{
+        & ul{
+            & li{
+                &:not(:last-child){
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        &-title{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            letter-spacing: -0.01em;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-dmsans);
+            @media #{$lg}{
+                font-size: 16px;
+            }
+            & a{
+                background-image: -webkit-radial-gradient(#fff, #fff), -webkit-radial-gradient(#fff, #fff);
+                background-image: -moz-radial-gradient(#fff, #fff),-moz-radial-gradient(#fff, #fff);
+                background-image: -ms-radial-gradient(#fff, #fff), -ms-radial-gradient(#fff, #fff);
+                background-image: -o-radial-gradient(#fff, #fff), -o-radial-gradient(#fff, #fff);
+                background-image:   radial-gradient(#fff, #fff), radial-gradient(#fff, #fff);
+                background-size: 0% 1px, 0 1px;
+                background-position: 100% 100%, 0 91%;
+                background-repeat: no-repeat;
+                &:hover{
+                    background-size: 0 1px, 100% 1px;
+                }
+            }
+        }
+    }
+    &__meta{
+        & span{
+            &:first-child{
+                font-weight: 500;
+                font-size: 13px;
+                line-height: 12px;
+                letter-spacing: 0.02em;
+                color: rgba(255, 255, 255, 0.5);
+                @media #{$lg}{
+                    font-size: 12px;
+                }
+            }
+        }
+        & span{
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.5);
+            &.text-2{
+                display: inline-block;
+                transform: translateY(-4px);
+            }
+            & i{
+                margin: 0 10px;
+                font-size: 20px;
+            }
+        }
+    }
+    &__post-thumb{
+        flex: 0 0 auto;
+        & img{
+            border-radius: 10px;
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+        }
+    }
+}
