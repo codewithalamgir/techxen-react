@@ -1,0 +1,383 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Footer Style 1
+/*----------------------------------------*/
+
+/* footer col design for home 1 */
+.tp-footer{
+    &-area{}
+    &-bg {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1 ;
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            background: #020C1B;
+            opacity: .98;
+        }
+    }
+    &-top{
+        &-area{
+            position: relative;
+            padding-top: 48px;
+            padding-bottom: 45px;
+        }
+        &-shape {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 160px;
+            width: 100%;
+            border-bottom: 1px solid rgba(217, 217, 217, 0.08);
+            @media #{$md,$sm} {
+                height: 200px;
+            }
+            @media #{$xs} {
+                height: 250px;
+            }
+          }
+        &-contact{
+            & a{
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 26px;
+                color: var(--tp-common-white);
+                background: #0E1825;
+                border-radius: 66.5px;
+                padding: 10px 24px;
+                @media #{$xs} {
+                    font-size: 17px;
+                }
+                & span{
+                    color: var(--tp-theme-secondary);
+                }
+            }
+        }
+        &-right{
+            @media #{$md,$sm,$xs} {
+                margin-top: 30px;
+            }
+            &-headphone{
+                & img{
+                    margin-right: 20px;
+                    transform: translateY(10px);
+                }
+            }
+            &-content{
+                & p{
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 34px;
+                    text-transform: uppercase;
+                    color: var(--tp-common-white);
+                    margin-bottom: -2px;
+                }
+                & a{
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 34px;
+                    color: var(--tp-theme-secondary);
+                }
+            }
+        }
+    }
+    &-logo {
+        margin-bottom: 30px;
+      }
+    &-info{
+        & p{
+            font-weight: 400;
+            font-size: 16px;
+            color: #B4B4B4;
+            margin-bottom: 35px;
+            @media #{$md,$sm,$xs} {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &-main{
+        &-area{
+            position: relative;
+            padding-top: 65px;
+            padding-bottom: 52px;
+            border-bottom: 1px solid rgba(217, 217, 217, 0.08);
+        }
+        &-location{
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            @media #{$lg} {
+                padding-left: 25px;
+            }
+            & a{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 34px;
+                color: #B4B4B4;
+                & br{
+                    @media #{$lg} {
+                        display: none;
+                    }
+                }
+                & i{
+                    color: var(--tp-theme-secondary);
+                    font-size: 20px;
+                    position: absolute;
+                    top: 10px;
+                    left: 0px;
+                }
+                &:hover{
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+        &-mail{
+            position: relative;
+            padding-left: 35px;
+            @media #{$lg} {
+                padding-left: 30px;
+            }
+            & a{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 34px;
+                color: #B4B4B4;
+                & i{
+                    color: var(--tp-theme-secondary);
+                    font-size: 20px;
+                    position: absolute;
+                    top: 10px;
+                    left: 0px;
+                }
+                &:hover{
+                    color: var(--tp-common-white);
+                }
+            }
+        }
+    }
+    &-widget{
+        &-title{
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 29px;
+            color: var(--tp-common-white);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        & ul{
+            & li{
+                list-style: none;
+                &:not(:last-of-type){
+                    margin-bottom: 22px;
+                }
+                & a{
+                    position: relative;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #B4B4B4;
+                    transition: 0.3s ease;
+                    &::before {
+                        position: absolute;
+                        content: '\e09f';
+                        font-family: "Font Awesome 6 Pro";
+                        top: 10px;
+                        left: -18px;
+                        font-size: 18px;
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        color: var(--tp-theme-secondary);
+                        transition: all 0.3s ease-in-out;
+                        opacity: 0;
+                        visibility: hidden;
+                      }
+
+                    &:hover{
+                        margin-left: 14px;
+                        color: var(--tp-common-white);
+                        &::before{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+        &-social{
+            & a{
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--tp-common-white);
+                margin-right: 20px;
+                &:hover{
+                    color: var(--tp-theme-secondary);
+                }
+            }
+        }
+    }
+    &-author{
+        margin-bottom: 32px;
+        &-thumb{
+            position: relative;
+            z-index: 0;
+            &::before{
+                position: absolute;
+                content: "";
+                background-color: var(--tp-theme-secondary);
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                right: 24px;
+                bottom: 4px;
+                z-index: 2;
+                @media #{$lg} {
+                    right: 14px;
+                }
+            }
+            & img{
+                filter: drop-shadow(0px 17px 28px rgba(72, 88, 174, 0.2));
+                margin-right: 20px;
+                @media #{$lg} {
+                    margin-right: 10px;
+                }
+            }
+        }
+        &-content{
+            & span{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 30px;
+                color: var(--tp-common-white);
+            }
+        }
+    }
+    &-from{
+        position: relative;
+        background: #081221;
+        padding: 30px 15px 40px 15px;
+    }
+    &-text-email{
+        margin-bottom: 20px;
+        & input{
+            position: relative;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(237, 237, 237, 0.3);
+            padding-left: 0px;
+            padding-right: 35px;
+            &::placeholder{
+                color: #B4B4B4;
+            }
+            &:focus{
+                color: var(--tp-common-white);
+                border-bottom: 1px solid #fff;
+            }
+        }
+        & span{
+            position: absolute;
+            top: 12px;
+            right: 2px;
+        }
+    }
+    &-form-check{
+        margin-bottom: 30px;
+
+        & label{
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 26px;
+            color: #B4B4B4;
+        }
+        & input{
+            border: 1px solid #4E545F;
+            background: transparent;
+            height: 23px;
+            width: 23px;
+            transform: translateY(-2px);
+            margin-right: 8px;
+            border-radius: 50% !important;
+            &:checked {
+                background-color: transparent;
+                box-shadow: none;
+              }
+        }
+    }
+    &-copyright{
+        &-area{
+            padding-top: 22px;
+            padding-bottom: 26px;
+        }
+        &-inner{
+            @media #{$md,$sm,$xs} {
+                margin-bottom: 15px;
+            }
+            & p,
+            & a{
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 27px;
+                color: var(--tp-common-white);
+                margin-bottom: 0;
+                & span{
+                    color: var(--tp-theme-secondary);
+                }
+            }
+        }
+    }
+    &-col-1{ 
+        @media #{$lg,$md,$sm,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+    &-col-2{
+        padding-left: 65px;
+        @media #{$xl} {
+            padding-left: 20px;
+        }
+        @media #{$lg} {
+            padding-left: 10px
+        }
+        @media #{$md,$sm,$xs} {
+            padding-left: 0px
+        }
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+    &-col-3{
+        padding-left: 20px;
+        @media #{$xl} {
+            padding-left: 0;
+            margin-left: -30px;
+        }
+        @media #{$lg,$sm,$xs} {
+            padding-left: 0;
+        }
+        @media #{$sm,$xs} {
+            margin-bottom: 40px;
+        }
+    }
+    &-col-4{
+        @media #{$xl} {
+            margin-left: -72px;
+        }
+        @media #{$sm,$xs} {
+            margin-left: 0;
+        }
+    }
+}

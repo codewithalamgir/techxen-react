@@ -1,0 +1,39 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.8 Marquee css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-marquee{
+    &-slider{
+        @include transform(rotate(-3deg) translateY(-35px));
+        &-active{
+            background-color: #BCE70C;
+            height: 84px;
+        }
+    }
+    &-item{
+        & p{
+            margin-bottom: 0;
+            color: #1A2813;
+            font-size: 30px;
+            font-weight: 600;
+            @extend %ff-garamond;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            & img{
+                margin-left: 25px;
+                margin-right: 35px;
+            }
+        }
+    }
+}
+
+.vue3-marquee.horizontal {
+    overflow: hidden;
+}
+
+

@@ -1,0 +1,82 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.15 Section Title
+/*----------------------------------------*/
+
+.tp-section{
+    &-title{
+        position: relative;
+        font-weight: 700;
+        font-size: 38px;
+        margin-bottom: 50px;
+        color: var(--tp-theme-primary);
+        @media #{$xs} {
+            font-size: 30px;
+        }
+        & i{
+            font-style: normal;
+            color: var(--tp-theme-secondary);
+        }
+        & .title-shape{
+            position: absolute;
+            left: 0;
+            color: var(--tp-theme-secondary);
+            bottom: -22px;
+        }
+        & .title-color{
+            color: var(--tp-theme-secondary);
+        }
+        & .title-left-shape {
+            position: absolute;
+            left: 0;
+            bottom: -25px;
+        }
+        & .title-right-shape {
+            position: absolute;
+            right: 60px;
+            bottom: -25px;
+            @media #{$xl,$lg,$md,$sm,$xs} {
+                display: none;
+            }
+        }
+        & .title-center-shape{
+            position: absolute;
+            bottom: -20px;
+            left: 47%;
+            @media #{$md} {
+                left: 40%;
+            }
+            @media #{$sm} {
+                left: 30%;
+            }
+            @media #{$xs} {
+                left: 26%;
+            }
+        }
+        @media #{$xl,$lg,$md,$sm,$xs}{
+           margin-bottom: 30px;
+        }
+        &__pre{
+            position: relative;
+            font-family: var(--tp-ff-body);
+            font-style: italic;
+            font-weight: 500;
+            font-size: 16px;
+            text-transform: lowercase;
+            color: var(--tp-text-2);
+            display: inline-block;
+            margin-bottom: 22px;
+            & .title-pre-color{
+                color: var(--tp-theme-secondary);
+            }
+            & svg{
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: var(--tp-theme-secondary);
+            }
+        }
+    }
+}

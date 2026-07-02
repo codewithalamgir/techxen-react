@@ -1,0 +1,64 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.9 feature css
+/*----------------------------------------*/
+
+
+.faq-style-1{
+    & .tp-faq-tab-content{
+        & .accordion-item{
+            position: relative;
+            background: var(--tp-common-white);
+            border: 1px solid rgba(4, 18, 31, 0.08);
+            border-radius: 0;
+            margin-bottom: 16px;
+            &.tp-faq-active{
+                position: relative;
+                box-shadow: 0px 14px 50px rgba(4, 11, 17, 0.12);
+                border: none;
+                & .accordion-button{
+                    color: var(--tp-theme-secondary);
+                    &::after{
+                        color: var(--tp-theme-secondary);
+                    }
+                }
+            }
+            & .accordion-button{
+                font-weight: 600;
+                font-size: 20px;
+                color: #000D44;
+                padding: 33px 45px 33px 34px;
+                @media #{$xs} {
+                    padding: 33px 45px 33px 25px;
+                }
+                &:hover{
+                    color: var(--tp-theme-secondary);
+                    &::after{
+                        color: var(--tp-theme-secondary);
+                    }
+                }
+                &::after{
+                    top: 36%;
+                    right: 34px;
+                    transition: .3s;
+                }
+            }
+        }
+        & .accordion-body {
+            padding: 0 59px 29px 34px;
+            @media #{$xs} {
+                padding: 0 45px 29px 34px;
+            }
+            & p{
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 28px;
+                color: #5A627D;
+                margin-bottom: 0;
+            }
+          }
+    }
+}
+
+

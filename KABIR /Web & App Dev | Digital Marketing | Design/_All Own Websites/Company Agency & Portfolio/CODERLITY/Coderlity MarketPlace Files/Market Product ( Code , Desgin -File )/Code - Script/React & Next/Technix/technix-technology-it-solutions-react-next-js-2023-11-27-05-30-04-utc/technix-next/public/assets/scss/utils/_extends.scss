@@ -1,0 +1,29 @@
+@use './mixins' as *;
+
+%include-bg{
+	@include background();
+}
+
+%tp-transition-common{
+	@include tp-transition();
+}
+
+%tp-transition-color{
+	@include tp-transition(color);
+}
+
+%tp-transition-transform{
+	@include tp-transition(transform);
+}
+
+%tp-transition-border-color{
+	@include tp-transition(border-color);
+}
+
+%tp-transition-bg-color{
+	@include tp-transition(backgroud-color);
+}
+
+%tp-transition-fz{
+	@include tp-transition(font-size);
+}

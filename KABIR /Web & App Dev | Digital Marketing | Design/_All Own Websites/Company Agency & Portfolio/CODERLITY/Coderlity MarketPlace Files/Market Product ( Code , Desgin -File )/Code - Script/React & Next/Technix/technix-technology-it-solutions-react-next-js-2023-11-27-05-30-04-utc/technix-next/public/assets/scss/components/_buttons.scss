@@ -1,0 +1,324 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  2.3 Buttons
+/*----------------------------------------*/
+
+/* theme btn */
+  .tp-btn{
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	font-family: var(--tp-ff-heading);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	padding: 21px 48px;
+	text-align: center;
+	letter-spacing: -0.01em;
+	text-transform: capitalize;
+	display: inline-block;
+	color: var(--tp-common-white);
+	background: var(--tp-theme-primary);
+	&::after {
+		position: absolute;
+		content: "";
+		background: var(--tp-theme-secondary);
+		height: 34px;
+		width: 36px;
+		border-radius: 15px;
+		right: -11px;
+		bottom: -11px;
+	  }
+	&::before{
+		content: "";
+		position: absolute;
+		height: 400px;
+		width: 430px;
+		top: 50%;
+		left: 50%;
+		background: var(--tp-theme-secondary);
+		border-radius: 50%;
+		transform: translateX(-22%) translateY(-42%) scale(0);
+		-moz-transition: all 0.5s ease-out 0s;
+		-webkit-transition: all 0.5s ease-out 0s;
+		-ms-transition: all 0.5s ease-out 0s;
+		-o-transition: all 0.5s ease-out 0s;
+		transition: all 0.5s ease-out 0s;
+		z-index: -1;
+	}
+	&:hover{
+		color: var(--tp-theme-primary);
+		&::before{
+			transform: translateX(-50%) translateY(-50%) scale(1);
+		}
+	}
+	& i{
+		margin-left: 16px;
+		transform: translateY(2px);
+	}
+  }
+
+
+  .tp-btn-2{
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	font-family: var(--tp-ff-heading);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	padding: 24px 72px;
+	text-align: center;
+	letter-spacing: -0.01em;
+	text-transform: capitalize;
+	display: inline-block;
+	color: var(--tp-common-white);
+	background: var(--tp-theme-secondary);
+	&::after {
+		position: absolute;
+		content: "";
+		background: var(--tp-theme-primary);
+		height: 34px;
+		width: 36px;
+		border-radius: 15px;
+		right: -11px;
+		bottom: -11px;
+	  }
+	&::before{
+		content: "";
+		position: absolute;
+		height: 400px;
+		width: 430px;
+		top: 50%;
+		left: 50%;
+		background: var(--tp-theme-primary);
+		border-radius: 50%;
+		transform: translateX(-22%) translateY(-42%) scale(0);
+		-moz-transition: all 0.5s ease-out 0s;
+		-webkit-transition: all 0.5s ease-out 0s;
+		-ms-transition: all 0.5s ease-out 0s;
+		-o-transition: all 0.5s ease-out 0s;
+		transition: all 0.5s ease-out 0s;
+		z-index: -1;
+	}
+	&:hover{
+		color: var(--tp-theme-secondary);
+		&::before{
+			transform: translateX(-50%) translateY(-50%) scale(1);
+		}
+	}
+	& i{
+		margin-left: 16px;
+		transform: translateY(2px);
+	}
+  }
+
+
+  .tp-btn-3{
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	font-family: var(--tp-ff-heading);
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	padding: 21px 48px;
+	text-align: center;
+	letter-spacing: -0.01em;
+	text-transform: capitalize;
+	display: inline-block;
+	color: var(--tp-common-white);
+	background: var(--tp-theme-primary);
+	&::after {
+		position: absolute;
+		content: "";
+		background: var(--tp-common-white);
+		height: 34px;
+		width: 36px;
+		border-radius: 15px;
+		right: -11px;
+		bottom: -11px;
+	  }
+	&::before{
+		content: "";
+		position: absolute;
+		height: 400px;
+		width: 430px;
+		top: 50%;
+		left: 50%;
+		background: var(--tp-common-white);
+		border-radius: 50%;
+		transform: translateX(-22%) translateY(-42%) scale(0);
+		-moz-transition: all 0.5s ease-out 0s;
+		-webkit-transition: all 0.5s ease-out 0s;
+		-ms-transition: all 0.5s ease-out 0s;
+		-o-transition: all 0.5s ease-out 0s;
+		transition: all 0.5s ease-out 0s;
+		z-index: -1;
+	}
+	&:hover{
+		color: var(--tp-theme-secondary);
+		&::before{
+			transform: translateX(-50%) translateY(-50%) scale(1);
+		}
+	}
+	& i{
+		margin-left: 16px;
+		transform: translateY(2px);
+	}
+  }
+
+
+//cursor hover effect
+.tp-btn-hover {
+	position: relative;
+	z-index: 9;
+	overflow: hidden;
+	&::after {
+		position: absolute;
+		content: '';
+		background: var(--tp-theme-secondary);
+		height: 34px;
+		width: 36px;
+		border-radius: 15px;
+		right: -11px;
+		bottom: -11px;
+	  }
+	& b {
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		background-color: var(--tp-common-white);
+		border-radius: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+		z-index: -1;
+	}
+
+	&:hover {
+		color: var(--tp-theme-primary);
+		& b {
+			width: 1000px;
+			height: 1000px;
+			display: inline-block;
+		}
+	}
+
+	&.alt-color {
+		& b {
+			background-color: var(--tp-theme-secondary);
+		}
+	}
+
+	&.alt-bg-blue {
+		& b {
+			background-color: var(--tp-theme-primary);
+		}
+	}
+
+	&.alt-black-color {
+		& b {
+			background-color: black;
+		}
+	}
+
+	&.alt-bg-white {
+		& b {
+			background-color: #fff;
+		}
+	}
+
+	&.alt-bg-red {
+		& b {
+			background-color: var(--tp-theme-red);
+		}
+	}
+
+}
+
+.tp-btn-hover-clear {
+	position: relative;
+	z-index: 9;
+	overflow: hidden;
+	& b {
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		background-color: var(--tp-common-white);
+		border-radius: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		-webkit-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+		z-index: -1;
+	}
+
+	&:hover {
+		color: var(--tp-common-white);
+		border-color: var(--tp-theme-secondary);
+		& b {
+			width: 500px;
+			height: 500px;
+			display: inline-block;
+		}
+	}
+
+	&.alt-color {
+		& b {
+			background-color: var(--tp-theme-secondary);
+		}
+	}
+
+	&.alt-bg-pink {
+		& b {
+			background-color: #FF3A8A;
+		}
+	}
+
+	&.alt-black-color {
+		& b {
+			background-color: black;
+		}
+	}
+
+	&.alt-bg-white {
+		& b {
+			background-color: #fff;
+		}
+	}
+
+	&.alt-bg-red {
+		& b {
+			background-color: var(--tp-theme-red);
+		}
+	}
+
+}
+
+
+/* offcanvas btn */
+.tp-btn-offcanvas{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--tp-common-white);
+	background: var(--tp-theme-primary);
+	text-align: center;
+	font-family: var(--tp-ff-space);
+	padding: 9px 22px;
+	letter-spacing: -0.02em;
+	position: relative;
+	z-index: 1;
+	text-transform: capitalize;
+ 
+	& i{
+	   padding-left: 5px;
+	}
+	&:hover{
+	   background-color: var(--tp-common-black);
+	   color: var(--tp-common-white);
+	}
+ }

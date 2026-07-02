@@ -1,0 +1,184 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.6 category css
+/*----------------------------------------*/
+
+
+.tp-category{
+    &-area{
+        background: var(--tp-bg-primary);
+    }
+    &-shape{
+        & .shape-1{
+            position: absolute;
+            top: 0;
+            left: 0;
+            @media #{$sm,$xs} {
+                display: none;
+            }
+        }
+        & .shape-2{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        & .shape-3{
+            position: absolute;
+            bottom: 36%;
+            left: 22%;
+            color: var(--tp-theme-secondary);
+            z-index: 0;
+            @media #{$xxxl} {
+                left: 18%;
+            }
+            @media #{$xxl} {
+                left: 12%;
+            }
+            @media #{$xl} {
+                left: 5%;
+            }
+            @media #{$lg} {
+                left: 1%;
+            }
+            @media #{$md,$sm,$xs} {
+                display: none;
+            }
+            & svg{
+                @media #{$lg} {
+                    width: 94%;
+                }
+            }
+        }
+    }
+    &-title-wrapper{
+        & .tp-section-title{
+            margin-bottom: 60px;
+        }
+    }
+    &-icon{
+    & img{
+        position: relative;
+    }
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        background-color: var(--tp-theme-secondary);
+        transform-origin: center;
+        -moz-transition: all 0.3s cubic-bezier(0.54, 0.33, 0.78, 0.84);
+        -webkit-transition: all 0.3s cubic-bezier(0.54, 0.33, 0.78, 0.84);
+        -ms-transition: all 0.3s cubic-bezier(0.54, 0.33, 0.78, 0.84);
+        -o-transition: all 0.3s cubic-bezier(0.54, 0.33, 0.78, 0.84);
+        transition: all 0.3s cubic-bezier(0.54, 0.33, 0.78, 0.84);
+        -moz-transform: scale(0);
+        -o-transform: scale(0);
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0);
+        transform: scale(.5);
+        z-index: 0;
+        opacity: 0;
+        border-radius: 50%;
+        }
+    }
+    &-content{
+        position: relative;
+        text-align: center;
+        height: 170px;
+        width: 170px;
+        background: var(--tp-common-white);
+        box-shadow: 0px 7px 29px rgba(13, 39, 69, 0.05);
+        border-radius: 50%;
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s;
+        &:hover{
+            & .tp-category-icon{
+                &::before{
+                    transform: scale(1.1);
+                    opacity: 1;
+                }
+            }
+            & .tp-category-content-title{
+                color: var(--tp-common-white);
+            }
+        }
+        &-wrapper{
+            @media #{$xs} {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+        &.one{
+            margin-left: -22px;
+            margin-top: 20px;
+            @media #{$sm,$xs} {
+                margin-right: 20px;
+                margin-top: 0;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &.two{
+            margin-left: 82px;
+            @media #{$lg} {
+                margin-left: 40px;
+            }
+            @media #{$sm,$xs} {
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &.three{
+            margin-top: 80px;
+            margin-left: -14px;
+            @media #{$md} {
+                margin-left: 120px;
+            }
+            @media #{$sm,$xs} {
+                margin-top: 0;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &.four{
+            margin-left: 34px;
+            @media #{$sm,$xs} {
+                margin-right: 20px;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &.five{
+            margin-left: 95px;
+            margin-top: 77px;
+            @media #{$lg} {
+                margin-left: 20px;
+            }
+            @media #{$md} {
+                margin-top: 30px;
+            }
+            @media #{$sm,$xs} {
+                margin-top: 0;
+                margin-left: 0;
+                margin-bottom: 30px;
+            }
+        }
+        &-title{
+            position: relative;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 31px;
+            text-transform: capitalize;
+            @include transition (.3s);
+            margin-bottom: 0;
+            margin-top: 10px;
+            color: var(--tp-heading-secondary);
+        }
+    }
+}

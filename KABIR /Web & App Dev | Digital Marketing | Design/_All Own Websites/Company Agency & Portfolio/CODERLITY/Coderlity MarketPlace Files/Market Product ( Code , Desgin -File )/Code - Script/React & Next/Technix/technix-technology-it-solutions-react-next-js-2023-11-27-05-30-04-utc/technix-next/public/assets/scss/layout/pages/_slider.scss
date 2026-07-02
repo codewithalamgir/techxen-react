@@ -1,0 +1,67 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.1 Slider css
+/*----------------------------------------*/
+
+
+.swiper-slide{
+    &.swiper-slide-active{
+        & .tp-hero{
+            &-title{
+                animation-fill-mode: both;
+                animation-name: fadeInUp;
+                &-wrapper{
+                    & .tp-section-title__pre{
+                        animation-fill-mode: both;
+                        animation-name: fadeInUp;
+                    }
+                }
+            }
+            &-btn{
+                & .tp-btn{
+                    animation-fill-mode: both;
+                    animation-name: fadeInUp;
+                }
+            }
+            &-bg{
+                visibility: visible;
+                -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+            }
+
+            &-3-title{
+                animation-fill-mode: both;
+                animation-name: fadeInUp;
+                &-wrapper{
+                    & .tp-section-title__pre{
+                        animation-fill-mode: both;
+                        animation-name: fadeInUp;
+                    }
+                }
+            }
+            &-3-btn{
+                & .tp-btn-2{
+                    animation-fill-mode: both;
+                    animation-name: fadeInUp;
+                }
+            }
+        }
+
+
+        &-3{
+            &-wrapper{
+                visibility: visible;
+                -webkit-transform: scale(1.3);
+                transform: scale(1.3);
+            }
+        }
+    }
+}
+
+.splide__track--nav > .splide__list > .splide__slide.is-active{
+    border: none !important;
+}
+.splide__track--nav > .splide__list > .splide__slide{
+    border: none !important;
+}

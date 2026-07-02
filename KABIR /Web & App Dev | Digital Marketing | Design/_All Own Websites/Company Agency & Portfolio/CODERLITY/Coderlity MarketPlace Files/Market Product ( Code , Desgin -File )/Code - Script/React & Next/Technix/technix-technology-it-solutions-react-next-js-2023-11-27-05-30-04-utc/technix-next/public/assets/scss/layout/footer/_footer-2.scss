@@ -1,0 +1,159 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.2 Footer Style 2
+/*----------------------------------------*/
+
+/* footer col design for home 2 */
+.tp-footer-2{
+    &-area{}
+    &-shape {
+        position: absolute;
+        top: 62px;
+        left: 0;
+      }
+    &-main-area{
+        position: relative;
+        padding-top: 145px;
+        padding-bottom: 60px;
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(217, 217, 217, 0.08);
+          }
+    }
+    &-col-1{
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 40px;
+        }
+        & .tp-footer-from{
+            & span{
+                position: absolute;
+                top: 12px;
+                right: 2px;
+            }
+        }
+    }
+    &-col-2{
+        padding-left: 105px;
+        @media #{$lg} {
+            padding-left: 7px;
+        }
+        @media #{$md} {
+            margin-bottom: 40px;
+            padding-left: 75px;
+        }
+        @media #{$sm,$xs} {
+            padding-left: 0;
+            margin-bottom: 40px;
+        }
+    }
+    &-col-3{
+        & .p{
+            margin-bottom: 34px;
+        }
+        & .tp-footer-main-location {
+            margin-bottom: 20px;
+        }
+    }
+    &-logo{
+        @media #{$sm,$xs} {
+            margin-bottom: 30px;
+        }
+    }
+    &-menu{
+        @media #{$md} {
+            padding-left: 48px;
+        }
+        &-area{
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        & ul{
+            & li{
+                list-style: none;
+                display: inline-block;
+                @media #{$sm,$xs} {
+                    display: block;
+                    margin-bottom: 20px;
+                }
+                &:not(:last-child){
+                    margin-right: 65px;
+                    @media #{$lg} {
+                        margin-right: 40px;
+                    }
+                    @media #{$md} {
+                        margin-right: 25px;
+                    }
+                }
+                & a:hover{
+                    &::before{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    &::after{
+                        width: 100%;
+                        left: 0;
+                        right: auto;
+                    }
+                }
+                & a{
+                    position: relative;
+                    font-weight: 500;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    color: var(--tp-common-white);
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        width: 0%;
+                        height: 2px;
+                        bottom: 0px;
+                        left: auto;
+                        right: 0;
+                        background-color: var(--tp-theme-secondary);
+                        transition: all 0.3s ease-out 0s;
+                    }
+                    &::before {
+                        position: absolute;
+                        content: "\e09f";
+                        font-family: "Font Awesome 6 Pro";
+                        top: 10px;
+                        left: -20px;
+                        font-size: 18px;
+                        -webkit-transform: translateY(-50%);
+                        -moz-transform: translateY(-50%);
+                        -ms-transform: translateY(-50%);
+                        transform: translateY(-50%);
+                        color: var(--tp-common-white);
+                        transition: all 0.3s ease-in-out;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+    &-call{
+            @media #{$md} {
+                margin-top: 30px;
+            }
+        & p{
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #828A8D;
+            margin-bottom: -8px;
+        }
+        & span{
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--tp-common-white);
+        }
+    }
+}

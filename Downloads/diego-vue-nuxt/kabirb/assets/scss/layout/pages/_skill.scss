@@ -1,0 +1,124 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.13 Skill css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-skill{
+    $self : &;
+    &-section-title{
+        & .#{$theme-prifix}-section-title{
+            margin-bottom: 9px;
+
+            &-wrapper{
+                & p{
+                    font-size: 22px;
+                    color: rgba($color: $white, $alpha: .5);
+                }
+            }
+        }
+    }
+
+    &-item{
+        margin-bottom: 30px;
+    }
+
+    &-thumb{
+        width: 170px;
+        height: 180px;
+        background: rgba($color: #FAFAFA, $alpha: .08);
+        border: 1px solid rgba($color: $white, $alpha: .09);
+        border-radius: 100px 0px 100px 100px;
+        margin-bottom: 22px;
+        @media #{$xs}{
+            width: 140px;
+            height: 170px;
+        }
+    }
+    &-icon{
+        padding-top: 10px;
+        margin-bottom: 18px;
+    }
+    &-count{
+        font-size: 30px;
+        font-weight: 600;
+        color: var(--tp-common-white);
+        @extend %ff-garamond;
+    }
+    &-title{
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--tp-common-white);
+        @extend %ff-garamond;
+    }
+    &-radius{
+        & .row{
+            & [class*="col-"]{
+                &:nth-child(even){
+                    #{$self}{
+                        &-thumb{
+                            border-radius: 0px 100px 100px 100px;
+                        }
+                    }
+                }
+               
+            }
+        }
+        
+    }
+    &-shape{
+        &-1{
+            position: absolute;
+            top: -97px;
+            left: 82px;
+            display: inline-block;
+            @include rounded(511px , 511px);
+            background-color: rgba($color: #F4BE1B, $alpha: .3);
+            filter: blur(150px);
+            z-index: -1;
+        }
+        &-2{
+            position: absolute;
+            bottom: -46%;
+            right: 194px;
+            display: inline-block;
+            @include rounded(462px , 462px);
+            background-color: rgba($color: #84994E, $alpha: .4);
+            filter: blur(190px);
+            z-index: -1;
+        }
+    }
+
+    &-tab{
+        & .#{$theme-prifix}-marker-tab{
+            position: relative;
+        }
+        #lineMarker{
+            position: absolute;
+            top: 5px;
+            display: inline-block;
+            background: #BCE70C;
+            box-shadow: 0px 2px 2px rgba(14, 30, 5, 0.5);
+            border-radius: 100px;
+            height: 32px;
+            @extend %transition;
+            z-index: -1;
+        }
+        & .nav-tabs{
+            border: 1px solid rgba($color: $white, $alpha: .2);
+            border-radius: 100px;
+            padding: 8px 4px;
+            & .nav-link{
+                font-size: 16px;
+                font-weight: 500;
+                color: rgba($color: $white, $alpha: .9);
+                padding: 0 35px;
+                &.active{
+                    background-color: transparent;
+                    color: #0D1F04;
+                }
+            }
+        }
+
+    }
+}

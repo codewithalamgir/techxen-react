@@ -1,0 +1,1 @@
+sass --watch D:\Dropbox\pranto\technix\technix-prev\assets\scss\main.scss:D:\Dropbox\pranto\technix\technix-prev\assets\css\main.css

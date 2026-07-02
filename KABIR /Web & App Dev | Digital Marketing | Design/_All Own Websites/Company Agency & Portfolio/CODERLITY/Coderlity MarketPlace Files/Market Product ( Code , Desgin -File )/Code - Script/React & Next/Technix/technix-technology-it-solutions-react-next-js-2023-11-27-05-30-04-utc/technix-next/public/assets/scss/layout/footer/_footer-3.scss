@@ -1,0 +1,27 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.3 Footer Style 3
+/*----------------------------------------*/
+
+/* footer col design for home 3 */
+.tp-footer-3{
+    &-area{}
+    &-main-area {
+        padding-top: 140px;
+        padding-bottom: 52px;
+        border-bottom: 1px solid rgba(217, 217, 217, 0.08);
+      }
+      &-col-1{
+        @media #{$md,$sm,$xs} {
+            margin-bottom: 40px;
+        }
+      }
+      &-col-2{
+        padding-left: 55px;
+        @media #{$md,$sm,$xs} {
+            padding-left: 0;
+            margin-bottom: 40px;
+        }
+      }
+}

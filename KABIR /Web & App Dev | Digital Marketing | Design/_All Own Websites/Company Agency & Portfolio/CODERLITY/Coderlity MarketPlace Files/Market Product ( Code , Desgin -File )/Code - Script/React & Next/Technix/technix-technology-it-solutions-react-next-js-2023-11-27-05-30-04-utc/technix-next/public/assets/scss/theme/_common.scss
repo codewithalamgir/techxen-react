@@ -1,0 +1,147 @@
+@use '../utils' as *;
+/*---------------------------------
+    1.2 Common Classes
+---------------------------------*/
+
+.w-img{
+	& img{
+		width: 100%;
+	}
+}
+
+.m-img{
+	& img{
+		max-width: 100%;
+	}
+}
+
+.fix {
+    overflow:hidden
+}
+.clear{
+    clear: both;
+}
+
+.z-index-1{
+	z-index: 1;
+}
+
+.z-index-11{
+	z-index: 11;
+}
+
+.overflow-y-visible{
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+.p-relative{
+	position: relative;
+}
+.p-absolute{
+	position: absolute;
+}
+
+.include-bg{
+	@include background();
+}
+
+
+// demo for method
+.demo{
+	@include tp-transition(color, .3s, linear);	
+
+	@include tp-transition-mul((color .3s linear, transform .2s ease));	
+
+	@include rtl{
+		margin-left: 0;
+		margin-right: 15px;
+	}
+	@include tp-root('div'){
+		img{
+			margin-left: 10px;
+		}
+	}
+	@include dark{
+		color: yellow;
+	}
+}
+
+
+/*----------------------------------------
+    Body Overlay 
+-----------------------------------------*/
+
+.body-overlay{
+    background-color: var(--tp-common-black);
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	@include tp-transition();
+
+	&:hover{
+		cursor: url(../../img/icon/close.png), pointer;
+	}
+}
+
+.body-overlay.opened{
+	opacity: .5;
+    visibility: visible;
+}
+
+
+.tp-gx-10{
+	--bs-gutter-x: 10px;
+
+	@media #{$lg} {
+		--bs-gutter-x: 10px;
+	}
+
+	@media #{$md} {
+		--bs-gutter-x: 8px;
+	}
+
+	@media #{$sm} {
+		--bs-gutter-x: 5px;
+	}
+
+	@media #{$xs} {
+		--bs-gutter-x: 5px;
+	}
+
+	& [class*="col-"] {
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-top: var(--bs-gutter-y);
+	}
+}
+
+
+
+/* dropcap */
+.tp-dropcap{
+	&::first-letter{
+		font-size: 50px;
+		font-weight: 700;
+		float: left;
+		text-align: center;
+		color: var(--tp-common-black);
+		background-color: var(--tp-common-white);
+		box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.06);	
+		margin-right: 5px;
+		line-height: inherit;
+	}
+}
+
+// for svg
+// on hover stroke animation
+// not checked
+.class{
+	stroke-dasharray: 189px, 191px;
+	stroke-dashoffset: 0px;
+}

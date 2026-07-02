@@ -1,0 +1,211 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.5 Course css
+/*----------------------------------------*/
+
+.#{$theme-prifix}-course{
+    $self : &;
+    &-item{
+        &:hover{
+            #{$self}{
+                &-thumb{
+                    & img{
+                        @include transform(scale(1.1));
+                    }
+                }
+            }
+        }
+    }
+    &-meta{
+        & span{
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba($color: #FFFFFF, $alpha: 0.7);
+            margin-bottom: 3px;
+            display: inline-block;
+        }
+    }
+    &-logo{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--tp-common-white);
+        box-shadow: 0px 10px 10px rgba(3, 7, 18, 0.1);
+        backdrop-filter: blur(95px);
+        border-radius: 6px;
+        & span{
+            display: inline-block;
+            padding: 10px 14px;
+            position: relative;
+            &:not(:last-child){
+                &::after{
+                    position: absolute;
+                    content: '';
+                    right: 0;
+                    top: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-color: rgba($color: #00005B, $alpha: .1);
+                }
+            }
+        }
+        & img{
+            width: auto;
+        }
+    }
+    &-thumb{
+        overflow: hidden;
+        margin-bottom: 21px;
+        border-radius: 14px;
+        & img{
+            border-radius: 14px;
+            @extend %transition;
+        }
+    }
+    &-title{
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 1.1;  
+        letter-spacing: -0.02em;
+        color: var(--tp-common-white);
+        font-family: var(--tp-ff-dmsans);
+        margin-bottom: 35px;
+        @media #{$lg}{
+            font-size: 28px;
+        }
+        @media #{$xs}{
+            font-size: 23px;
+        }
+
+        & a{
+            background-image: -webkit-radial-gradient(#fff, #fff), -webkit-radial-gradient(#fff, #fff);
+            background-image: -moz-radial-gradient(#fff, #fff),-moz-radial-gradient(#fff, #fff);
+            background-image: -ms-radial-gradient(#fff, #fff), -ms-radial-gradient(#fff, #fff);
+            background-image: -o-radial-gradient(#fff, #fff), -o-radial-gradient(#fff, #fff);
+            background-image:   radial-gradient(#fff, #fff), radial-gradient(#fff, #fff);
+
+            background-size: 0% 2px, 0 2px;
+            background-position: 100% 100%, 0 85%;
+            background-repeat: no-repeat;
+            @include transition-mul((background-size 0.4s linear));
+
+            &:hover{
+                background-size: 0 2px, 100% 2px;
+            }
+        }
+    }
+    &-price-btn{
+        background-color: var(--tp-green-2);
+        height: 46px;
+        line-height: 46px;
+        padding: 0px 27px;
+        border-radius: 6px;
+        margin-right: 65px;
+        @media #{$xs}{
+            margin-right: 56px;
+        }
+        & span{
+            &.new-price{
+                font-weight: 600;
+                font-size: 24px;
+                color: var(--tp-common-black-2);
+                font-family: var(--tp-ff-garamond);
+                margin-right: 5px;
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+            }
+            &.old-price{
+                font-weight: 600;
+                font-size: 18px;
+                color: rgba(26, 40, 19, 0.5);
+                font-family: var(--tp-ff-garamond);
+                @media #{$xs}{
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &:hover{
+            background-color: var(--tp-common-white);
+        }
+    }
+    &-pirce-offer{
+        & span{
+            position: absolute;
+            top: -30px;
+            left: -45px;
+            color: var(--tp-common-white);
+        }
+        & p{
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--tp-green-2); 
+            font-family: var(--tp-ff-garamond);
+            margin-bottom: 0;
+            @media #{$xs}{
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.tp-pcb-tab{
+    position: relative;
+    z-index: 1;
+    & .blog-btn-tab{
+        position: relative;
+        z-index: 1;
+    }
+    #lineMarker {
+        position: absolute;
+        top: 5px;
+        display: inline-block;
+        background: #BCE70C;
+        box-shadow: 0px 2px 2px rgba(14, 30, 5, 0.5);
+        border-radius: 100px;
+        height: 32px;
+        z-index: -1;
+    }
+    #blog-btn-bg{
+        position: absolute;
+        top: 6px;
+        display: inline-block;
+        background: #BCE70C;
+        box-shadow: 0px 2px 2px rgba(14, 30, 5, 0.5);
+        border-radius: 100px;
+        height: 32px;
+        @extend %transition;
+        z-index: -1;
+    }
+
+    & .nav-tabs{
+        border: 1px solid rgba($color: $white, $alpha: .2);
+        border-radius: 100px;
+        padding: 8px 5px;
+        & .nav-links{
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba($color: $white, $alpha: .9);
+            padding: 0 26px;
+            @media #{$xs}{
+                font-size: 11px;
+                padding: 0 20px;
+            }
+            &.active{
+                background-color: transparent;
+                color: #0D1F04;
+            }
+        }
+    }
+}
+
+.tp-pcb{
+    &-inner{
+        @media #{$md,$xs}{
+            padding-left: 0;
+            padding-right: 0;
+        }  
+    }
+}

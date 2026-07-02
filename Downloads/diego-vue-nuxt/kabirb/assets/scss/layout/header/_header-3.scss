@@ -1,0 +1,75 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.3 Header Style 3
+/*----------------------------------------*/
+
+.tp-header-3{
+    &__transparent{
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    &__logo{
+        & img{
+            width: 115px;
+        }
+    }
+    &__ptlr{
+        padding-left: 85px;
+        padding-right: 85px;
+        padding-top: 35px;
+        @media #{$lg}{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        @media #{$md}{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @media #{$xs}{
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 20px;
+        }
+        &.slider-pt{
+            padding-top: 25px;
+        }
+    }
+    &__right-action{
+        & ul{
+            & li{
+                display: inline-block;
+            }
+        }
+    }
+    &__bar{
+        margin-left: 20px;
+        & button{
+            color: var(--tp-common-white);
+            & span{
+                height: 2px;
+                width: 32px;
+                background-color: var(--tp-common-white);
+                display: inline-block;
+            }
+        }
+    }
+    &__btn{
+        line-height: 0;
+        margin-left: 20px;
+        & .tp-btn-white{
+            box-shadow: none;
+        }
+    }
+    &__light-dark{
+        & button{
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            line-height: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            display: inline-block;
+        }
+    }
+}

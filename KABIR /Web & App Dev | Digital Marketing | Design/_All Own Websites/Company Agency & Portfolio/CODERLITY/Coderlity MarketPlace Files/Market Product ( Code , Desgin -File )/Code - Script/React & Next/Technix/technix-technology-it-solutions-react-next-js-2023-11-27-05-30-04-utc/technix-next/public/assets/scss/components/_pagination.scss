@@ -1,0 +1,33 @@
+@use '../utils' as *;
+/*----------------------------------------*/
+/*  2.9 Pagination
+/*----------------------------------------*/
+
+.tp-pagination{
+	& ul{
+		& li{
+			display: inline-block;
+			&:not(:last-child){
+				margin-right: 10px;
+			}
+			& a,
+			& span{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				line-height: 46px;
+				text-align: center;
+				border-radius: 7px;
+				border: 2px solid #f1f1f1;
+				font-size: 18px;
+				font-weight: 600;
+				&:hover,
+				&.current{
+					background: var(--tp-theme-primary);
+					border-color: var(--tp-theme-primary);
+					color: var(--tp-common-white);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,150 @@
+@use '../../utils' as *;
+
+
+/*----------------------------------------*/
+/*  8.1 offer css
+/*----------------------------------------*/
+
+.tp-offer{
+    &-area{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+    &-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(243, 251, 254, 0.7) 55.73%, rgba(243, 251, 254, 0.7) 100%);
+        z-index: -1;
+    }
+    &-shape{
+        & .shape-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        & .shape-2 {
+            position: absolute;
+            right: 124px;
+            top: 210px;
+            animation: tprotate 2s ease-in-out 0.1s forwards infinite alternate;
+        }
+    }
+    &-wrapper{
+        position: relative;
+        background: var(--tp-common-white);
+        box-shadow: 0px 4px 27px rgba(0, 0, 0, 0.04);
+        padding: 48px 0px 35px 0px;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            background: var(--tp-theme-secondary);
+            height: 27px;
+            width: 0px;
+            transition: all .4s ;
+        }
+        &:hover{
+            & .tp-offer-wrapper-thumb{
+                animation: icon-bounce 0.8s 1;
+            }
+            &::after{
+                width: 31px;
+            }
+            & .tp-offer-wrapper-btn{
+                & a{
+                    & i{
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+        & .offer-title{
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 31px;
+            margin-bottom: 22px;
+            color: var(--tp-theme-primary);
+        }
+        &-thumb{
+            & img{
+                margin-bottom: 30px;
+                height: 66px;
+            }
+        }
+        &-btn{
+            & a{
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 36px;
+                color: var(--tp-theme-secondary);
+                transition: all .3s ease-in;
+                &:hover{
+                    color: var(--tp-theme-primary);
+                }
+                & i{
+                    transform: translateY(2px);
+                    margin-left: 10px;
+                    transition: all .3s ease-in;
+                }
+            }
+        }
+    }
+    &-all-btn{
+        & p{
+            position: relative;
+            font-family: 'Raleway';
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--tp-heading-secondary);
+            margin-bottom: 0;
+            & a{
+                color: var(--tp-theme-secondary);
+                text-decoration: underline;
+                & span{
+                    margin-left: 10px;
+                    background: var(--tp-common-white);
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.11);
+                    height: 20px;
+                    width: 20px;
+                    display: inline-block;
+                    border-radius: 50%;
+                    line-height: 20px;
+                    text-align: center;
+                    color: var(--tp-theme-secondary);
+                    & i {
+                        transform: translateX(2px);
+                      }
+                }
+            }
+        }
+    }
+}
+
+.tp-feature-wrapper.offer{
+    & p::after{
+        @media #{$xl} {
+            left: 95px;
+        }
+        @media #{$lg} {
+            height: 45px;
+        }
+    }
+}
+#tp-feature-wrapper2{
+    & p{
+        &::after {
+            left: 190px;
+        }
+    }
+  }

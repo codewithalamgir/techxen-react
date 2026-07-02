@@ -1,0 +1,333 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  8.4 fun fact css
+/*----------------------------------------*/
+
+
+.tp-industry{
+    &-area{
+        background: rgba(232, 247, 253, 0.5);
+        overflow: hidden;
+    }
+    &-shape {
+        & .shape-1 {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @media #{$xxxxl} {
+                left: 49%;
+                transform: translateX(-51%);
+            }
+            @media #{$xxxl} {
+                left: 45%;
+            }
+            @media #{$xxl} {
+                left: 38%;
+            }
+            @media #{$xl} {
+                left: 27%;
+            }
+            @media #{$lg} {
+                left: 12%;
+            }
+            @media #{$md,$sm,$xs} {
+                display: none;
+            }
+          }
+        & .shape-2 {
+            position: absolute;
+            bottom: -55%;
+            left: 0;
+             @media #{$md,$sm,$xs} {
+                display: none;
+            }
+          }
+        & .shape-3 {
+            position: absolute;
+            bottom: -55%;
+            right: 0;
+             @media #{$md,$sm,$xs} {
+                display: none;
+            }
+          }
+    }
+    &-wrapper{
+        position: relative;
+        &:hover{
+            &::before{
+                width: 31px;
+            }
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(0 0, 0% 100%, 100% 100%);
+            background: var(--tp-theme-secondary);
+            height: 27px;
+            width: 0px;
+            transition: all 0.4s;
+        }
+    }
+    &-content{
+        background: var(--tp-common-white);
+        border-radius: 5px;
+        padding: 55px 20px 51px 51px;
+        @media #{$xl} {
+            padding: 55px 20px 45px 50px;
+        }
+        @media #{$lg} {
+            text-align: center;
+        }
+        @media #{$sm} {
+            padding: 55px 20px 50px 35px;
+        }
+        @media #{$xs} {
+            padding: 30px;
+        }
+        &-title{
+            position: relative;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 35px;
+            text-transform: capitalize;
+            margin-bottom: 40px;
+            color: var(--tp-theme-primary);
+            transform: translateX(10px);
+            & br{
+                @media #{$xs} {
+                    display: none;
+                }
+            }
+            @media #{$xs} {
+                font-size: 19px;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                background: #05DAC3;
+                width: 2px;
+                height: 56px;
+                left: -10px;
+                top: 6px;
+                @media #{$lg} {
+                    left: 256px;
+                }
+              }
+        }
+    }
+    &-thumb{
+        position: relative;
+        margin-right: 80px;
+        @media #{$xs} {
+            margin-right: 31px;
+            margin-bottom: 20px;
+        }
+        &:last-child{
+            margin-right: 0px;
+        }
+        &:not(:last-of-type)::before {
+            position: absolute;
+            content: '';
+            top: -12px;
+            right: -48px;
+            height: 128px;
+            width: 1px;
+            background: #EBEBEB;
+            @media #{$xs} {
+                display: none;
+            }
+          }
+        &-wrapper{
+            position: relative;
+            margin-bottom: 30px;
+            @media #{$lg} {
+                justify-content: center;
+            }
+            @media #{$xs} {
+                flex-wrap: wrap;
+            }
+        }
+        & img{
+            height: 61px;
+            margin-bottom: 20px;
+            height: auto;
+        }
+    }
+    &-title{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: capitalize;
+        color: var(--tp-heading-secondary);
+    }
+    &-btn{
+        & .icon{
+            display: inline-block;
+            height: 43px;
+            width: 43px;
+            border-radius: 50%;
+            line-height: 42px;
+            text-align: center;
+            border: 1px solid #EBEBEB;
+            filter: drop-shadow(0px 4px 9px rgba(0, 0, 0, 0.09));
+            
+        }
+        & a{
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 36px;
+            letter-spacing: 0.02em;
+            text-transform: capitalize;
+            color: var(--tp-heading-secondary);
+            margin-left: 10px;
+            &:hover span{
+                color: var(--tp-theme-secondary);
+            }
+            & span{
+                transition: all .3s ease-in-out;
+                text-decoration: underline;
+            }
+        }
+    }
+    &-tab{
+        background: var(--tp-common-white);
+        border-radius: 5px;
+        padding: 55px 60px 61px 51px;
+        @media #{$xl} {
+            padding: 55px 40px 56px 50px;
+        }
+        @media #{$lg} {
+            padding: 55px 60px 30px 50px;
+        }
+        @media #{$md} {
+            padding: 55px 60px 20px 50px;
+        }
+        @media #{$sm} {
+            padding: 55px 30px 15px 30px;
+        }
+        @media #{$xs} {
+            padding: 30px;
+        }
+        & .nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+            background-color: transparent;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--tp-common-white);
+            z-index: 2;
+            &::after{
+                height: 100%;
+                z-index: -1;
+            }
+        }
+        & #pills-tab {
+            border-bottom: 1px solid #020626;
+        }
+        & .nav-item{
+            & .nav-link{
+                position: relative;
+                border-radius: 0;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #1D1D1D;
+                font-size: 14px;
+                font-weight: 500;
+                padding: 10px 30px;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 0%;
+                    background-color: var(--tp-theme-primary);
+                    left: 0;
+                    bottom: 0;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+    &-content{
+        margin-top: 40px;
+        &-inner{
+            @media #{$xs} {
+                flex-wrap: wrap;
+            }
+        }
+        & img{
+            position: relative;
+            margin-right: 20px;
+            border-radius: 10px;
+            width: 212px;
+            height: 138px;
+            height: auto;
+            object-fit: cover;
+            @media #{$xs} {
+                margin-bottom: 20px;
+            }
+        }
+        & button{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 30%;
+            height: 48px;
+            width: 48px;
+            display: inline-block;
+            line-height: 48px;
+            border-radius: 50%;
+            text-align: center;
+            color: var(--tp-common-white);
+            background: var(--tp-theme-secondary);
+            cursor: pointer;
+        }
+        & ul{
+            & li{
+                list-style: none;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                color: #313B3D;
+                margin-bottom: 10px;
+                & span{
+                    margin-right: 5px;
+                    color: var(--tp-theme-secondary);
+                }
+            }
+        }
+    }
+    }
+    &-progress-bar{
+        position: relative;
+        @media #{$lg,$md,$sm,$xs} {
+            margin-bottom: 40px;
+        }
+        & h4{
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--tp-heading-secondary);
+            margin-bottom: 10px;
+        }
+        & .progress {
+            overflow: inherit;
+            height: 3px;
+            border-radius: 1.5px;
+            &-bar {
+                position: relative;
+                overflow: inherit;
+                background-color: var(--tp-theme-secondary);
+                & span {
+                    text-align: right;
+                    transform: translateY(-20px);
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: var(--tp-heading-secondary);
+                }
+            }
+        }
+    }
+}
